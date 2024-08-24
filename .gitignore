@@ -9,6 +9,9 @@
 # testing
 /coverage
 
+# extensions
+/.vscode/
+
 # next.js
 /.next/
 /out/
