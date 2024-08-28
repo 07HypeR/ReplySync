@@ -9,14 +9,14 @@ export async function sendVerificationEmail(
 ): Promise<ApiResponse> {
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "dev@hiteshchoudhary.com",
       to: email,
-      subject: "ReplySync | Verification code",
+      subject: "Mystery Message Verification Code",
       react: VerificationEmail({ username, otp: verifyCode }),
     });
-    return { success: true, message: "Verification email send sucessfully" };
+    return { success: true, message: "Verification email sent successfully." };
   } catch (emailError) {
-    console.error("Error sending verification email", emailError);
-    return { success: false, message: "Failed to send verification email" };
+    console.error("Error sending verification email:", emailError);
+    return { success: false, message: "Failed to send verification email." };
   }
 }
