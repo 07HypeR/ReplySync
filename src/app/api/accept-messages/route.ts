@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]/options';
 import dbConnect from '@/lib/dbConnect';
 import UserModel from '@/model/User';
 import { User } from 'next-auth';
+=======
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../auth/[...nextauth]/options";
+import dbConnect from "@/lib/dbConnect";
+import UserModel from "@/model/User";
+import { User } from "next-auth";
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
 
 export async function POST(request: Request) {
   // Connect to the database
@@ -12,7 +20,11 @@ export async function POST(request: Request) {
   const user: User = session?.user;
   if (!session || !session.user) {
     return Response.json(
+<<<<<<< HEAD
       { success: false, message: 'Not authenticated' },
+=======
+      { success: false, message: "Not authenticated" },
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       { status: 401 }
     );
   }
@@ -33,7 +45,11 @@ export async function POST(request: Request) {
       return Response.json(
         {
           success: false,
+<<<<<<< HEAD
           message: 'Unable to find user to update message acceptance status',
+=======
+          message: "Unable to find user to update message acceptance status",
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
         },
         { status: 404 }
       );
@@ -43,21 +59,34 @@ export async function POST(request: Request) {
     return Response.json(
       {
         success: true,
+<<<<<<< HEAD
         message: 'Message acceptance status updated successfully',
+=======
+        message: "Message acceptance status updated successfully",
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
         updatedUser,
       },
       { status: 200 }
     );
   } catch (error) {
+<<<<<<< HEAD
     console.error('Error updating message acceptance status:', error);
     return Response.json(
       { success: false, message: 'Error updating message acceptance status' },
+=======
+    console.error("Error updating message acceptance status:", error);
+    return Response.json(
+      { success: false, message: "Error updating message acceptance status" },
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       { status: 500 }
     );
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
 export async function GET(request: Request) {
   // Connect to the database
   await dbConnect();
@@ -69,7 +98,11 @@ export async function GET(request: Request) {
   // Check if the user is authenticated
   if (!session || !user) {
     return Response.json(
+<<<<<<< HEAD
       { success: false, message: 'Not authenticated' },
+=======
+      { success: false, message: "Not authenticated" },
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       { status: 401 }
     );
   }
@@ -81,7 +114,11 @@ export async function GET(request: Request) {
     if (!foundUser) {
       // User not found
       return Response.json(
+<<<<<<< HEAD
         { success: false, message: 'User not found' },
+=======
+        { success: false, message: "User not found" },
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
         { status: 404 }
       );
     }
@@ -95,9 +132,15 @@ export async function GET(request: Request) {
       { status: 200 }
     );
   } catch (error) {
+<<<<<<< HEAD
     console.error('Error retrieving message acceptance status:', error);
     return Response.json(
       { success: false, message: 'Error retrieving message acceptance status' },
+=======
+    console.error("Error retrieving message acceptance status:", error);
+    return Response.json(
+      { success: false, message: "Error retrieving message acceptance status" },
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       { status: 500 }
     );
   }

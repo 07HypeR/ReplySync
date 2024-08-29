@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 export { default } from 'next-auth/middleware';
 
 export const config = {
   matcher: ['/dashboard/:path*', '/sign-in', '/sign-up', '/', '/verify/:path*'],
+=======
+import { NextRequest, NextResponse } from "next/server";
+import { getToken } from "next-auth/jwt";
+export { default } from "next-auth/middleware";
+
+export const config = {
+  matcher: ["/dashboard/:path*", "/sign-in", "/sign-up", "/", "/verify/:path*"],
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
 };
 
 export async function middleware(request: NextRequest) {
@@ -14,6 +23,7 @@ export async function middleware(request: NextRequest) {
   // and trying to access sign-in, sign-up, or home page
   if (
     token &&
+<<<<<<< HEAD
     (url.pathname.startsWith('/sign-in') ||
       url.pathname.startsWith('/sign-up') ||
       url.pathname.startsWith('/verify') ||
@@ -24,6 +34,18 @@ export async function middleware(request: NextRequest) {
 
   if (!token && url.pathname.startsWith('/dashboard')) {
     return NextResponse.redirect(new URL('/sign-in', request.url));
+=======
+    (url.pathname.startsWith("/sign-in") ||
+      url.pathname.startsWith("/sign-up") ||
+      url.pathname.startsWith("/verify") ||
+      url.pathname === "/")
+  ) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+
+  if (!token && url.pathname.startsWith("/dashboard")) {
+    return NextResponse.redirect(new URL("/sign-in", request.url));
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
   }
 
   return NextResponse.next();

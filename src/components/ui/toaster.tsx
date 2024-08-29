@@ -25,7 +25,11 @@ export function Toaster() {
               )}
             </div>
             {action}
+<<<<<<< HEAD
             <ToastClose/>
+=======
+            <ToastClose />
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
           </Toast>
         )
       })}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -106,3 +107,12 @@ export default function SignInForm() {
     </div>
   );
 }
+=======
+import React from "react";
+
+const page = () => {
+  return <div>sign-in page</div>;
+};
+
+export default page;
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec

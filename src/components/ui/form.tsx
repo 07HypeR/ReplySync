@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+"use client"
+
+>>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
