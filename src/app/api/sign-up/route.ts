@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import dbConnect from '@/lib/dbConnect';
-import UserModel from '@/model/User';
-import bcrypt from 'bcryptjs';
-import { sendVerificationEmail } from '@/helpers/sendVerificationEmail';
-=======
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import bcrypt from "bcryptjs";
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
->>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
 
 export async function POST(request: Request) {
   await dbConnect();
@@ -25,11 +18,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           success: false,
-<<<<<<< HEAD
-          message: 'Username is already taken',
-=======
           message: "Username is already taken",
->>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
         },
         { status: 400 }
       );
@@ -43,11 +32,7 @@ export async function POST(request: Request) {
         return Response.json(
           {
             success: false,
-<<<<<<< HEAD
-            message: 'User already exists with this email',
-=======
             message: "User already exists with this email",
->>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
           },
           { status: 400 }
         );
@@ -96,28 +81,16 @@ export async function POST(request: Request) {
     return Response.json(
       {
         success: true,
-<<<<<<< HEAD
-        message: 'User registered successfully. Please verify your account.',
-=======
         message: "User registered successfully. Please verify your account.",
->>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       },
       { status: 201 }
     );
   } catch (error) {
-<<<<<<< HEAD
-    console.error('Error registering user:', error);
-    return Response.json(
-      {
-        success: false,
-        message: 'Error registering user',
-=======
     console.error("Error registering user:", error);
     return Response.json(
       {
         success: false,
         message: "Error registering user",
->>>>>>> 8fbcf00e06b6c3eeef1f4965779aa033408fedec
       },
       { status: 500 }
     );
